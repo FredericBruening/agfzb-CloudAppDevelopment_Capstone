@@ -132,7 +132,7 @@ def add_review(request, dealer_id):
         review_payload["purchase"] = request.POST.get('purchase', False)
 
         if review_payload['purchase']:
-            car = CarModel.objects.filter(id=request.car)
+            car = CarModel.objects.filter(id=request.POST.get('car'))
 
             review_payload["purchase_date"] = request.POST.get('purchasedate')
             review_payload["car_make"] = car.maker.name
