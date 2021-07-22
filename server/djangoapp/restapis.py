@@ -119,6 +119,6 @@ def analyze_review_sentiments(review):
           '-9ed4909fbe2a/v1/analyze'
 
     response = requests.get(url, params=params, headers={'Content-Type': 'application/json'},
-                            auth=HTTPBasicAuth('apikey', os.getenv('NLU_API_KEY', 'vrEQHVUQoZNyvNIeWMhjybkGFE3Ux3t4vGOiPl_y3IAc')))
+                            auth=HTTPBasicAuth('apikey', os.getenv('NLU_API_KEY', '')))
 
     return json.loads(response.text)['sentiment']['document']['label']
